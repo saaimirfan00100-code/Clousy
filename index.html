@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Clousy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="top-bar">
+        <img src="assets/Clousy-Logo (2).png" alt="Clousy Logo (2)" class="clousy-logo (2)">
+        <h1>  Clousy</h1>
+</div>
+
+<canvas id="weatherCanvas"></canvas>
+
+<div class="rain"></div>
+
+<div class="weather-card">
+
+    <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Search City">
+        <button id="searchBtn">Search</button>
+    </div>
+
+    <p id="loading">Loading weather...</p>
+
+    <button id="unitToggle">°C / °F</button>
+
+    <div class="main-weather">
+
+        <h2 id="cityName">City Name</h2>
+
+        <img id="weatherIcon"
+        src="https://openweathermap.org/img/wn/01d@2x.png"
+        width="120">
+
+        <p id="temperature">Temperature : --°C</p>
+
+        <p id="condition">Condition : --</p>
+
+    </div>
+
+    <div class="details">
+
+    <div class="detail-card">
+        <h3>💧 Humidity</h3>
+        <p id="humidity">--%</p>
+    </div>
+
+    <div class="detail-card">
+        <h3>💨 Wind</h3>
+        <p id="wind">-- km/h</p>
+    </div>
+
+    <div class="detail-card">
+        <h3>🌡️ Feels Like</h3>
+        <p id="feelsLike">--°C</p>
+    </div>
+
+    <div class="detail-card">
+        <h3>👁️ Visibility</h3>
+        <p id="visibility">-- km</p>
+
+    </div>
+
+    <div class="detail-card">
+    <h3>🌅 Sunrise</h3>
+    <p id="sunrise">--:--</p>
+</div>
+
+<div class="detail-card">
+    <h3>🌇 Sunset</h3>
+    <p id="sunset">--:--</p>
+</div>
+
+    </div>
+
+</div>
+
+<div class="forecast-section">
+
+    <h2>5-Day Forecast</h2>
+
+    <div class="forecast-container" id="forecastContainer">
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
