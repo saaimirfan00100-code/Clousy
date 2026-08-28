@@ -9,29 +9,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XBR6QP6BWJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XBR6QP6BWJ');
-</script>
 </head>
 
 <body>
 
-<div class="top-bar">
-        <img src="assets/Clousy-Logo (2).png" alt="Clousy Logo (2)" class="clousy-logo (2)">
-        <h1>  Clousy</h1>
+<div id="splashScreen">
+    <img src="assets/Clousy logo v5.png" alt="Clousy Logo">
+    <p>Designed for Your Sky</p>
 </div>
 
-<canvas id="weatherCanvas"></canvas>
+<aside class="sidebar">
 
-<div class="rain"></div>
+    <img src="assets/Clousy logo v5.png"
+         alt="Clousy Logo"
+         class="sidebar-logo">
 
-<div class="weather-card">
+    <nav class="sidebar-nav">
+
+        <button id="homeBtn">🏠 Home</button>
+
+        <button id="weatherBtn">🌤️ Weather</button>
+
+        <button id="newsBtn">📰 News</button>
+
+    </nav>
+
+</aside>
+
+<main class="page-content">
+
+    <section id="homePage" class="page">
+        <!-- Home page abhi blank hai -->
+    </section>
+
+    <section id="weatherPage" class="page">
+
+        <div class="weather-content">
+
+        <div class="weather-card">
 
     <div class="search-box">
         <input type="text" id="cityInput" placeholder="Search City">
@@ -91,7 +106,19 @@
 
     </div>
 
-</div>
+</div>        
+
+        </div>
+
+    </section>
+
+</main>
+
+<canvas id="weatherCanvas"></canvas>
+
+<div class="rain"></div>
+
+
 
 <div class="forecast-section">
 
