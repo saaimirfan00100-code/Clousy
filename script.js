@@ -1,3 +1,17 @@
+const homeBtn = document.getElementById("homeBtn");
+const weatherBtn = document.getElementById("weatherBtn");
+const newsBtn = document.getElementById("newsBtn");
+
+const homePage = document.getElementById("homePage");
+const weatherPage = document.getElementById("weatherPage");
+homeBtn.addEventListener("click", function () {
+    homePage.style.display = "block";
+    weatherPage.style.display = "none";
+});
+weatherBtn.addEventListener("click", function () {
+    weatherPage.style.display = "block";
+    homePage.style.display = "none";
+});
 const rain = document.querySelector(".rain");
 
 const button = document.getElementById("searchBtn");
@@ -282,4 +296,17 @@ unitToggle.addEventListener("click", function () {
         feelsLike.innerText =
             fahrenheitFeels.toFixed(1) + "°F";
     }
+});
+
+window.addEventListener("load", function () {
+    setTimeout(function () {
+        const splash = document.getElementById("splashScreen");
+
+        splash.style.opacity = "0";
+
+        setTimeout(function () {
+            splash.style.display = "none";
+        }, 600);
+
+    }, 2000);
 });
