@@ -1,3 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     margin: 0;
     font-family: "Poppins", sans-serif;
@@ -10,11 +20,11 @@ body {
     justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
-    padding-top: 30px;
+    overflow-x: hidden;
 }
 
 .weather-card {
-    width: 1000px;
+    width: min(700px, calc(100% - 40px));
     padding: 30px;
     text-align: center;
 
@@ -33,6 +43,8 @@ body {
     position: relative;
 
     z-index: 1;
+
+    margin: 20px auto;
 }
 
 h1 {
@@ -111,7 +123,7 @@ button:hover {
 }
 
 #temperature {
-    font-size: 55px;
+    font-size: 20px;
     font-weight: bold;
     color: white;
     margin: 10px 0;
@@ -239,38 +251,6 @@ button:hover {
     border-radius: 10px;
 }
 
-.top-bar{
-    width: 90%;
-    max-width: 1200px;
-    height: 80px;
-
-    margin: 30px auto 20px;
-    padding: 0 30px;
-
-    background: rgba(255,255,255,0.20);
-    backdrop-filter: blur(20px);
-
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 25px;
-
-    display: flex;
-    align-items: center;
-
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-
-    position: relative;
-
-    z-index: 1;
-}
-
-.top-bar h1{
-    color: white;
-    font-size: 34px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin: 0;
-}
-
 .rain{
     position: fixed;
     top:0;
@@ -315,8 +295,12 @@ button:hover {
 }
 
 .clousy-logo {
-    width: 70px;
-    height: 100px;
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    z-index: 1000;
 }
 
 /* 5-Day Forecast */
@@ -365,4 +349,110 @@ button:hover {
     text-align: center;
     font-size: 16px;
     margin: 15px 0;
+}
+#splashScreen {
+    position: fixed;
+    inset: 0;
+    background: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+    transition: opacity 0.6s ease;
+}
+
+#splashScreen img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+#splashScreen p {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #172B4D;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 150px;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 25px;
+
+    z-index: 1000;
+}
+
+.sidebar-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 28px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 125px;
+}
+
+.sidebar-nav button {
+    width: 100%;
+    padding: 10px 8px;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.sidebar-nav button:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateX(3px);
+}
+
+.page-content {
+    margin-left: 150px;
+    width: calc(100% - 150px);
+    min-height: 100vh;
+}
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.weather-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-nav button.active {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.45);
+    transform: translateX(3px);
 }
